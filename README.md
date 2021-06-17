@@ -48,3 +48,11 @@ content-type: image/png
 content-length: 11720
 ```
 
+# Run
+To run, use following command:
+
+```
+deno run --unstable --allow-env=SERVER_PORT,DISK_FILE_PATH,ROUTE_FILE_PATH --allow-read=/var/tmp --allow-write=/var/tmp --allow-net=0.0.0.0 --location http://ephemeral-server server.ts
+```
+
+The ephemeral file service runs in a strict sandbox with read/write access only to /var/tmp, local network access, and access to three environment variables.
